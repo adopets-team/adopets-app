@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Linking, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Linking, TouchableOpacity } from 'react-native';
 
 export default function Login() {
-    const [user, onChangeUser] = React.useState(user);
-    const [passwd, onChangePasswd] = React.useState(passwd);
+    const [user, onChangeUser] = React.useState('');
+    const [passwd, onChangePasswd] = React.useState('');
   
     return (
         <View style={styles.container}>
@@ -11,7 +11,9 @@ export default function Login() {
                 style={styles.image}
                 source={require('../assets/brand/main.png')}
             />
-            <Text>Bem vindo, por favor logue para entrar.</Text>
+          <View style={styles.infos}>
+            <Text style={styles.title}>Bem vindo, por favor logue para entrar.</Text>
+          </View>
             <TextInput
                 style={styles.input}
                 onChangeText={onChangeUser}
@@ -26,25 +28,28 @@ export default function Login() {
                 placeholder="Senha"
                 keyboardType="default"
             />
-            <Text>Esqueceu sua senha?  
-                <Text 
-                    style={styles.link}
-                    onPress={() => Linking.openURL('https://google.com.br')}
-                > 
-                Redifina</Text>
-            </Text>
-            <Button
-                title='Login'
-                style={styles.button}
-
-            />
-            <Text>Não possui conta? 
-                <Text 
-                    style={styles.link}
-                    onPress={() => Linking.openURL('https://google.com.br')}
-                > 
-                Cadastra-se</Text>
-            </Text>
+            <View style={styles.infos}>
+              <Text style={styles.textPasswd}>Esqueceu sua senha?  
+                  <Text 
+                      style={styles.link}
+                      onPress={() => Linking.openURL('https://google.com.br')}
+                  > 
+                  Redifina</Text>
+              </Text>
+              <TouchableOpacity 
+                style={styles.circledButton}
+                // onPress={}
+              >
+                <Text style={styles.textOnButton}>Login</Text>
+              </TouchableOpacity>
+              <Text style={styles.title}>Não possui conta?
+                  <Text 
+                      style={styles.link}
+                      onPress={() => Linking.openURL('https://google.com.br')}
+                  > 
+                  Cadastra-se</Text>
+              </Text>
+            </View>
         </View>
     );
 }
@@ -52,13 +57,14 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    flex: 1,
     justifyContent: 'center',
+    flex: 1,
     margin: 20, 
   },
   image: {
     width: 'auto',
-    height: 200,
+    height: 150,
+    marginBottom: 8,
   },
   input: {
     height: 41,
@@ -69,12 +75,30 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   link: {
-    color: '#74B9FF'
-  },
-  button: {
     color: '#74B9FF',
-    borderWidth: 1,
-    borderColor: '#74B9FF',
+  },
+  circledButton: {
+    height: 41,
+    width: 143,
     borderRadius: 15,
+    backgroundColor:'#74B9FF',
+    justifyContent: "center",
+		flexDirection: "row",
+		alignItems: "center",
+    margin: 10,
+  },
+  textPasswd: {
+    fontSize: 15,
+  },
+  title: {
+    fontSize: 17,
+  },
+  textOnButton: {
+    color: '#FFFFFF',
+    fontSize: 16
+  },
+  infos: {
+    flexDirection: 'column',
+    alignItems: 'center',
   }
 });
