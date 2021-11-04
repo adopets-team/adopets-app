@@ -30,4 +30,10 @@ export default StyleSheet.create({
         color: '#FFFFFF',
         fontSize: 16
     },
+    // Texts
+    errorMessage: {
+        marginLeft: 10,
+        fontSize: 14,
+        color: '#E9514C',
+    }
 })

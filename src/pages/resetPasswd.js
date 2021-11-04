@@ -45,7 +45,7 @@ export default function ResetPasswd() {
                 value={email}
                 placeholder="Digite seu email"
             />
-            <Text style={style.message}>{message}</Text>
+            <Text style={styles.errorMessage}>{message}</Text>
             <View style={style.info}>
                 <TouchableOpacity 
                     style={styles.circledButton}
@@ -91,10 +91,5 @@ const style = StyleSheet.create({
     title: {
         marginLeft: 10,
         fontSize: 17,
-    },
-    message: {
-        marginLeft: 10,
-        fontSize: 14,
-        color: '#E9514C',
     },
 });
