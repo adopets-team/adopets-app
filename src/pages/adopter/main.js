@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../../assets/styles'
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Modal, ImageBackground, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Modal, ImageBackground } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 export default function mainAdopter() {
