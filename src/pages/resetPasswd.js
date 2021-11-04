@@ -25,8 +25,8 @@ export default function ResetPasswd() {
                 animationType="slide"
                 visible={modalVisible}
             >   
-                <View style={style.centered}>
-                    <View style={style.modal}>
+                <View style={styles.centered}>
+                    <View style={styles.modal}>
                         <Text style={style.title}> Código enviado para email </Text> 
                         <TouchableOpacity 
                             style={styles.circledButton}
@@ -59,27 +59,6 @@ export default function ResetPasswd() {
 }
 
 const style = StyleSheet.create({
-    centered: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 22
-    },
-    modal: {
-        margin: 20,
-        backgroundColor: "white",
-        borderRadius: 20,
-        padding: 35,
-        alignItems: "center",
-        shadowColor: "#000",
-        shadowOffset: {
-          width: 0,
-          height: 2
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5
-    },
     container: {
         backgroundColor: '#fff',
         flex: 1,
