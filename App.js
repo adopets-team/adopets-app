@@ -9,7 +9,6 @@ import mainAdopter from './src/pages/adopter/main';
 import mainNGO from './src/pages/NGO/main';
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
@@ -44,13 +43,3 @@ export default function App() {
     </NavigationContainer>
   );
 };
-
-function Tabs() {
-  <Tab.Navigator>
-    <Tab.Screen name="Animal Perdido" component=""/>
-    <Tab.Screen name="Favoritos" component=""/>
-    <Tab.Screen name="Principal" component=""/>
-    <Tab.Screen name="Chat" component=""/>
-    <Tab.Screen name="Perfil" component=""/>
-  </Tab.Navigator>
-}
